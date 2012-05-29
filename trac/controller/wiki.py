@@ -55,7 +55,7 @@ class New:
             size=30,
             description="Page title:"),
         web.form.Textarea('content', web.form.notnull, 
-            rows=30, cols=80,
+            rows=30, cols=120,
             description="Page content:", post="Use <a href='http://en.wikipedia.org/wiki/Markdown'>markdown</a> syntax"),
         web.form.Button('Create page'),
     )
@@ -91,7 +91,7 @@ class Edit:
             size=30,
             description="Page title:"),
         web.form.Textarea('content', web.form.notnull, 
-            rows=30, cols=80,
+            rows=30, cols=120,
             description="Page content:", post="Use <a href='http://en.wikipedia.org/wiki/Markdown'>markdown</a> syntax"),
         web.form.Button('Update page'),
     )
@@ -111,5 +111,5 @@ class Edit:
         if not form.validates():
             return render.edit(page, form)
         tmw.update_page(int(id), form.d.url, form.d.title, form.d.content)
-        raise web.seeother('/wiki')
+        raise web.seeother('/wiki/%s' % form.d.url)
 
