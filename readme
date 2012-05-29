@@ -12,6 +12,8 @@ Python + web.py (Python的web开发框架)
    2) 使用web.py中访问数据库的接口： web.database
 
 
+install Mysql-python
+http://webpy.org/docs/0.3/tutorial
 
 
 
