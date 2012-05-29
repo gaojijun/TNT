@@ -1,0 +1,43 @@
+$def with (ticket, form, form2, changes)
+
+<h3>Ticket #$ticket.id</h3>
+
+<style type="text/css">
+#form1, #history, #change {
+    border: 1px solid;
+    margin: auto auto 5px auto;
+    width: 80%;
+    padding: 0.5em 1em;
+}
+
+#form1 {
+    background-color: #FFFFDD; 
+}
+
+
+</style>
+
+<div id='form1'>
+$:form.render()
+</div>
+
+<div id='history'>
+<h3>Change History</h3>
+$ x = 1
+$for c in changes:
+    <p>
+    <span>$x. Changed by $c['author'] at $c['time']<span>
+    $for cc in c['comment']:
+        <li><b>$cc[0]</b> changed from <i>$cc[2]</i> to <i>$cc[1]</i></li>
+    $c.notes
+    </p>
+    $ x = x + 1
+</div>
+
+<div id='change'>
+<h3>Add/Change #$ticket.id ($ticket.summary)</h3>
+
+<form action="" method="post">
+$:form2.render()
+</form>
+</div>

@@ -1,0 +1,33 @@
+系统的安装：
+Python + web.py (Python的web开发框架)
+
+安装：
+1. 安装Python
+2. 安装setuptools
+3. 安装web.py: easy_install web.py
+
+
+
+基本的wiki功能：
+1. 可以增加wiki条目
+2. 可以查看wiki条目
+3. 可以编辑wiki条目
+4. 可以获得wiki列表
+
+
+
+如何实现：
+1. 设计好代码目录结构
+   项目根目录
+    - wiki.py 程序的入口，其中主要包含url的解析
+    - model.py 程序的主要逻辑部分，包含数据库访问的代码
+    - templates目录 各种html页面
+2. 使用Mysql数据库
+   1）安装Python连接Mysql的驱动: Mysql-python
+   2) 使用web.py中访问数据库的接口： web.database
+
+
+
+
+
+

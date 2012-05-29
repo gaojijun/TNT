@@ -1,0 +1,78 @@
+$def with (users)
+
+<style type="text/css">
+
+div li {
+    display: inline;
+    padding-right: 20px;
+}
+
+</style>
+
+<script type="text/javascript" src="/static/js/jquery-1.4.4.min.js">
+</script>
+
+<script type="text/javascript">
+
+$$(document).ready(
+    function() {
+        $$("table tr:nth-child(even)").addClass("striped");
+    }
+);
+
+</script>
+
+<li><a href="/user/new">新增用户</a></li>
+<li>用户列表:</li>
+
+<table>
+    <tr>
+        <th>用户名</th>
+        <th>邮箱</th>
+        <th>是否超级用户</th>
+        <th>新增wiki</th>
+        <th>编辑wiki</th>
+        <th>删除wiki</th>
+        <th>新增ticket</th>
+        <th>编辑ticket</th>
+        <th>删除ticket</th>
+        <th>删除用户</th>
+    </tr>
+
+$for user in users:
+    <tr>
+        <td><a href="/user/edit/$user.id">$user.username</a></td>
+        <td>$user.email</td>
+        $if user.isadmin:
+            <td>是</td>
+        $else:
+            <td>否</td>
+        $if user.newwiki:
+            <td>是</td>
+        $else:
+            <td>否</td>
+        $if user.editwiki:
+            <td>是</td>
+        $else:
+            <td>否</td>
+        $if user.deletewiki:
+            <td>是</td>
+        $else:
+            <td>否</td>
+        $if user.newticket:
+            <td>是</td>
+        $else:
+            <td>否</td>
+        $if user.editticket:
+            <td>是</td>
+        $else:
+            <td>否</td>
+        $if user.deleteticket:
+            <td>是</td>
+        $else:
+            <td>否</td>
+        <td><a href="/user/delete/$user.id">删除</a></td>
+    </tr>
+
+</table>
+

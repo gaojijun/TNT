@@ -1,0 +1,56 @@
+$def with (page)
+
+<html>
+<head>
+    <link type="text/css" href="/static/css/ui-lightness/jquery-ui-1.8.20.custom.css" rel="Stylesheet" />
+    <link type="text/css" href="/static/common.css" rel="Stylesheet" />
+    <script type="text/javascript" src="/static/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-ui-1.8.20.custom.min.js"></script>
+    $if page.has_key('title'):
+        <title>$page.title</title>
+    $else:
+        <title>My Wiki</title>
+    <style type="text/css">
+#nav {
+    font: 13px verdana,'Bitstream Vera Sans',helvetica,arial,sans-serif;
+    float: right;
+    width: 100%;
+    border-width: thin;
+    border-style: solid
+}
+#nav ul {
+    list-style: none outside none;
+}
+
+#nav li {
+    display: inline;
+    padding-right: 20px;
+}
+
+#content1 {
+    float: right;
+}
+
+    </style>
+</head>
+<body>
+
+<div id="nav">
+<div id="content1">
+<ul>
+        $if context.login == 1:
+            <li width=100>logged in as $context.username</li>
+            <li width=100><a href="/logout">Logout</a></li>
+        $if context.user.isadmin:
+            <li width=100><a href="/user">User</a></li>
+        <li width=100><a href="/wiki">Wiki</a></li>
+        <li width=100><a href="/ticket">Ticket</a></li>
+        <li width=100><a href="/ticket/new">New Ticket</a></li>
+</ul>
+</div>
+</div>
+
+$:page
+
+</body>
+</html>

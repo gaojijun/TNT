@@ -1,0 +1,16 @@
+$def with (form)
+
+<script type="text/javascript">
+
+$$(document).ready(
+    function() {
+        $$("#start").datepicker();
+        $$("#end").datepicker();
+    }
+);
+
+</script>
+<h1>New ticket</h1>
+<form action="" method="post">
+$:form.render()
+</form>

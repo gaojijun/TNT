@@ -1,0 +1,25 @@
+
+table {
+    border: solid 1px #666;
+    border-collapse: collapse;
+    border-spacing: 0;
+    clear: both;
+    margin-top: 1em;
+    width: 100%;
+    background-color:#DDDDDD;
+}
+
+td, th {
+    border: 1px dotted #111111;
+    padding: 0.1em 0.5em !important;
+    font: 13px Verdana,Arial,'Bitstream Vera Sans',Helvetica,sans-serif;
+}
+
+th {
+    color: #BB0000;
+    text-align: left;
+}
+
+.striped {
+    background-color: #CCCDDD;
+}

@@ -1,0 +1,44 @@
+$def with (pages)
+
+<style type="text/css">
+
+div li {
+    padding-right: 20px;
+}
+
+</style>
+
+
+<script type="text/javascript">
+
+$$(document).ready(
+    function() {
+        $$("table tr:nth-child(even)").addClass("striped");
+    }
+);
+
+</script>
+
+<div id="content">
+
+$if context.user.isadmin or context.user.newwiki :
+    <li><a href="/wiki/new">新建wiki页</a></li>
+<li>Wiki 列表:</li>
+
+<table>
+    <tr>
+        <th>Wiki URL</th>
+        <th>Wiki标题</th>
+        $if context.user.isadmin or context.user.deletewiki :
+            <th>删除wiki</th>
+    </tr>
+$for page in pages:
+    <tr>
+        <td><a href="/wiki/$page.url">$page.url</a></td>
+        <td>$page.title</td>
+        $if context.user.isadmin or context.user.deletewiki :
+            <td><a href="/wiki/delete/$page.id">删除</a></td>
+    </tr>
+</table>
+
+</div>
