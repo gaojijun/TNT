@@ -1,4 +1,5 @@
 import web
+import trac.controller.document as tcd
 import trac.controller.user as tcu
 import trac.controller.wiki as tcw
 import trac.controller.ticket as tct
@@ -16,6 +17,10 @@ urls = (
 
     '/login', tcl.Login,
     '/logout', tcl.Logout,
+
+    '/document', tcd.Index,
+    '/document/upload', tcd.Upload,
+    '/document/delete/(.*)', tcd.Delete,
 
     '/user', tcu.Index,
     '/user/new', tcu.New,

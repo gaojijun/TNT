@@ -1,24 +1,7 @@
 $def with (tickets)
 
-<style type="text/css">
-
-div li {
-    display: inline;
-    padding-right: 20px;
-}
-
-</style>
-
-<script type="text/javascript">
-
-$$(document).ready(
-    function() {
-        $$("table tr:nth-child(even)").addClass("striped");
-    }
-);
-
-</script>
-<h2>Tickets:</h2>
+<div id="content">
+<li>Tickets列表</li>
 
 <table>
     <tr>
@@ -39,3 +22,4 @@ $for ticket in tickets:
 
 
 </table>
+</div>
