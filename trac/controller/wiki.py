@@ -13,7 +13,7 @@ def updateRender():
     global render
     render = web.template.render(
         'templates/wiki',
-        base='base',
+        base='../layout',
         globals=t_globals
     )
 

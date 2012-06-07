@@ -14,7 +14,7 @@ def updateRender():
     global render
     render = web.template.render(
         'templates/user',
-        base='base',
+        base='../layout',
         globals=t_globals
     )
 

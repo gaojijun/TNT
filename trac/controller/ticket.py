@@ -16,7 +16,7 @@ def updateRender():
     global render
     render = web.template.render(
         'templates/ticket',
-        base='base',
+        base='../layout',
         globals=t_globals
     )
 
